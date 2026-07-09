@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, redirect
 import redis  # 1. Tambahkan import redis di paling atas
-
+import os
 app = Flask(__name__)
 
 redis_host = os.environ.get('REDIS_HOST', 'redis')
