@@ -26,7 +26,7 @@ def shorten_url():
     # Kita set waktu kedaluwarsa otomatis (TTL) selama 24 jam (86400 detik)
     redis_client.setex(short_code, 86400, long_url)
     
-    short_url = f"http://localhost:5000/{short_code}"
+    short_url = f"http://localhost:8080/{short_code}"
     
     return jsonify({
         "original_url": long_url,
