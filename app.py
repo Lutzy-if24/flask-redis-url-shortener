@@ -3,7 +3,8 @@ import redis  # 1. Tambahkan import redis di paling atas
 
 app = Flask(__name__)
 
-redis_client = redis.Redis(host='redis', port=6379, decode_responses=True)
+redis_host = os.environ.get('REDIS_HOST', 'redis')
+redis_client = redis.Redis(host=redis_host, port=6379, decode_responses=True)
 
 @app.route('/')
 def home():
