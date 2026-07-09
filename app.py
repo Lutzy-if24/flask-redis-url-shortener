@@ -3,12 +3,7 @@ import redis  # 1. Tambahkan import redis di paling atas
 
 app = Flask(__name__)
 
-# 2. DI SINI TEMPAT GANTINYA: 
-# Kita hapus url_db = {} dan ganti dengan koneksi ke Redis dengan host='redis'
-try:
-    redis_client = redis.Redis(host='localhost', port=6379, decode_responses=True)
-except Exception as e:
-    print(f"Gagal terhubung ke Redis: {e}")
+redis_client = redis.Redis(host='redis', port=6379, decode_responses=True)
 
 @app.route('/')
 def home():
