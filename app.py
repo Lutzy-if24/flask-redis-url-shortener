@@ -45,4 +45,4 @@ def redirect_to_url(short_code):
         return jsonify({"error": "URL tidak ditemukan atau sudah kedaluwarsa!"}), 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
