@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  # Service untuk aplikasi Flask kita
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  # Service untuk database Redis
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
